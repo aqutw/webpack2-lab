@@ -10,7 +10,7 @@ const config = {
     rules: [
       {
         use: 'babel-loader',
-        
+        test: /\.js$/,
       }
     ]
   }
