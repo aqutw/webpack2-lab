@@ -1,6 +1,10 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const urlLoader = {
+  loader: 'url-loader',
+  options: { limit: 40000 }
+};
 const config = {
   entry: './src/index.js',
   output: {
@@ -18,6 +22,10 @@ const config = {
           loader: 'css-loader'
         }),
         test: /\.css$/
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif|svg)/,
+        use: [urlLoader, 'image-webpack-loader']
       }
     ]
   },
