@@ -8,6 +8,7 @@ const urlLoader = {
 const config = {
   entry: './src/index.js',
   output: {
+    publicPath: 'build/',
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
   },
